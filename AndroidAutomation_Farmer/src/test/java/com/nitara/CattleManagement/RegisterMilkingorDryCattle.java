@@ -1,0 +1,103 @@
+package com.nitara.CattleManagement;
+
+import java.util.Map;
+
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.nitara.GenericBase.GenericBase;
+import com.nitara.Helper.GenerateRandomData;
+import com.nitara.PageObjects.CattleRegistrationSuccess_Page;
+import com.nitara.PageObjects.FarmerHomePage;
+import com.nitara.PageObjects.LoginObjects;
+import com.nitara.PageObjects.MilkingCattleRegister_Page;
+import com.nitara.utils.DataProviderUtils;
+
+public class RegisterMilkingorDryCattle extends GenericBase{
+
+	@Test(dataProvider = "getData",dataProviderClass = DataProviderUtils.class)
+	public void RegisterCattle_MilkingorDryCattle(Map<String,String> data) throws InterruptedException {
+
+		GenerateRandomData numb = new GenerateRandomData();
+
+		String username = prop.getProperty("Username");
+		String password = prop.getProperty("Password"); 
+
+
+		String tagNumber = numb.generateRandomNumber(7);
+		String cooptagNumber = numb.generateRandomNumber(12);
+
+		//Login with SP credentials
+		LoginObjects login = new LoginObjects();
+		login.userLogin(username, password);
+
+		//Farmer Home page - Select Register Cattle
+		FarmerHomePage obj = new FarmerHomePage();
+		obj.press_RegisterCattleButton();
+
+		MilkingCattleRegister_Page reg = new MilkingCattleRegister_Page();
+		reg.findElement("MILKING AND DRY CATTLE");
+		reg.assert_CattleType();
+		reg.enter_TagNumber(tagNumber);
+		reg.enter_CoopTagNumber(cooptagNumber);
+		reg.select_cattleType(data.get("cattleType"));
+		reg.select_cattleBreed(data.get("breed"));
+
+		if(data.get("isCrossBreed").equalsIgnoreCase("true")) {
+			reg.select_crossbreedToggle(data.get("isCrossBreed"), data.get("crossedWith"));}
+
+		reg.select_Lactation(data.get("currentLactation"));
+		reg.enter_Calvingdate(data.get("lastCalvingDate"));
+		reg.enter_CalfCount(data.get("calfCount"));
+		reg.enter_Calf1Gender(data.get("calf1Gender"));
+
+		if(data.get("calfCount").equalsIgnoreCase("twins")) {
+			reg.enter_Calf2Gender(data.get("calf2Gender"));
+		}
+
+		// Check cattle Pregnant - Artificial or Natural Insemination
+		if(data.get("isCattlePregnant").equalsIgnoreCase("true")) {
+			if(data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				reg.isCattlePregnant(data.get("pregnantSince"));
+				reg.artificialInsemination(data.get("inseminationDate"),data.get("semenBrand") ,data.get("bullId"));
+			}
+			else{
+				reg.isCattlePregnant(data.get("pregnantSince"));
+				reg.naturalInsemination(data.get("inseminationDate"),data.get("bullId"));
+			}
+		}
+
+		// Check cattle is not pregnant and is only inseminated - Artificial or Natural Insemination
+		else if(data.get("isCattleInseminated").equalsIgnoreCase("true")) {
+			if(data.get("inseminationType").equalsIgnoreCase("artificial")) {
+				reg.isCattleInseminated();
+				reg.artificialInsemination(data.get("inseminationDate"),data.get("semenBrand") ,data.get("bullId"));}
+
+			else{
+				reg.isCattleInseminated();
+				reg.naturalInsemination(data.get("inseminationDate"),data.get("bullId"));
+			}
+		}
+
+		if(data.get("isCattleDry").equalsIgnoreCase("true")) {
+			reg.cattleIsDry();
+			reg.enter_DryPeriodDate(data.get("dryPeriodDate"));
+		}
+
+		reg.press_SaveButton();
+
+		Thread.sleep(10000);
+		
+		//Cattle Registration Success page
+		CattleRegistrationSuccess_Page msg = new CattleRegistrationSuccess_Page();
+		msg.assertCattleTag(tagNumber);
+		msg.assertSuccessMsg("Registration has been saved successfully for");
+	
+
+
+
+	}
+
+}
+

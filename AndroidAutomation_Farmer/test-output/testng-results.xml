@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29801" started-at="2021-12-13T07:38:49 IST" finished-at="2021-12-13T07:39:19 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="29801" started-at="2021-12-13T07:38:49 IST" finished-at="2021-12-13T07:39:19 IST">
+      <class name="com.nitara.CattleManagement.RegisterBull">
+        <test-method status="PASS" signature="reportSetup()[pri:0, instance:com.nitara.CattleManagement.RegisterBull@438a68]" name="reportSetup" is-config="true" duration-ms="109" started-at="2021-12-13T07:38:49 IST" finished-at="2021-12-13T07:38:49 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportSetup -->
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.nitara.CattleManagement.RegisterBull@438a68]" name="initialize" is-config="true" duration-ms="9688" started-at="2021-12-13T07:38:50 IST" finished-at="2021-12-13T07:39:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="RegisterCattle_Bull(java.util.Map)[pri:0, instance:com.nitara.CattleManagement.RegisterBull@438a68]" name="RegisterCattle_Bull" duration-ms="17989" started-at="2021-12-13T07:39:00 IST" data-provider="getData" finished-at="2021-12-13T07:39:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{isCrossBreed=true, cattleType=Cow, weight=200, crossedWith=HF, testcase=RegisterCattle_Bull, monthOfBirth=APRIL, breed=Rathi, yearOfBirth=2018}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterCattle_Bull -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.nitara.CattleManagement.RegisterBull@438a68]" name="quit" is-config="true" duration-ms="1449" started-at="2021-12-13T07:39:18 IST" finished-at="2021-12-13T07:39:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="endSetup()[pri:0, instance:com.nitara.CattleManagement.RegisterBull@438a68]" name="endSetup" is-config="true" duration-ms="2" started-at="2021-12-13T07:39:19 IST" finished-at="2021-12-13T07:39:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endSetup -->
+      </class> <!-- com.nitara.CattleManagement.RegisterBull -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

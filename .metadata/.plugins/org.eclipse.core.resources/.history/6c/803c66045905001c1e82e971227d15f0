@@ -1,0 +1,31 @@
+package com.nitara.Helper;
+
+import java.util.Locale;
+
+import org.testng.annotations.Test;
+
+import com.github.javafaker.Faker;
+
+
+public class GenerateRandomData {
+	
+	@Test
+	public String generateRandomPhoneNo() {
+		Faker faker = new Faker(new Locale("en-IND"));
+		
+		String number = faker.number().digits(10);
+		System.out.println(number);
+		return number;
+		
+	}
+	
+	public String generateRandomNumber(int noOfDigit) {
+		Faker faker = new Faker();
+		
+		String number = faker.number().digits(noOfDigit);
+		System.out.println(number);
+		return number;
+		
+	}
+
+}

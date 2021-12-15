@@ -1,0 +1,28 @@
+
+P
+java:S5164	"&Call "remove()" on "chromeDriverPort".(æÖ†„ıÿÿÿÿHõRMAJORZBUG
+E
+java:S5164" Call "remove()" on "deviceName".(üë¿ÒHöRMAJORZBUG
+L
+java:S5164""Call "remove()" on "platformName".(ÕÈ”éúÿÿÿÿH÷RMAJORZBUG
+E
+java:S5164" Call "remove()" on "systemPort".(ìì‡ÇHøRMAJORZBUG
+>
+java:S5164"Call "remove()" on "udid".(Î˜ÌrHùRMAJORZBUG
+l	java:S125;"<This block of commented-out lines of code should be removed.(Ä“ûùÿÿÿÿHúRMAJORZ
+CODE_SMELL
+Š
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÕÈ”éúÿÿÿÿHûRMINORZ
+CODE_SMELL
+„
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Î˜ÌrHıRMINORZ
+CODE_SMELL
+…
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(üë¿ÒHÿRMINORZ
+CODE_SMELL
+…
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ìì‡ÇHRMINORZ
+CODE_SMELL
+Š
+java:S2293	"YReplace the type specification in this constructor call with the diamond operator ("<>").(æÖ†„ıÿÿÿÿHƒRMINORZ
+CODE_SMELL

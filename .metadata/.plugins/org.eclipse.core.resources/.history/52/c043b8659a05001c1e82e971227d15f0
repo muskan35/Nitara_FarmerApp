@@ -1,0 +1,56 @@
+package com.nitara.PageObjects;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+
+public class AddHeat_Page  extends BasePage{
+	
+	@AndroidFindBy(id = "com.nitara.farmer:id/naturalBtn") 
+	private MobileElement natural_btn;
+	
+	@AndroidFindBy(id = "com.nitara.farmer:id/artificialBtn") 
+	private MobileElement artificial_btn;
+	
+	@AndroidFindBy(id = "com.nitara.farmer:id/heatTime") 
+	private MobileElement heatTime;
+	
+	@AndroidFindBy(id = "com.nitara.farmer:id/heat_date") 
+	private MobileElement heat_date;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(" + "new UiSelector().scrollable(true)).scrollIntoView("
+			+ "new UiSelector().resourceIdMatches(\"" +"com.nitara.farmer:id/saveBtn"+ "\"))")  
+	private MobileElement save_btn;
+	
+
+	
+	public void select_HeatType(String type) {
+		
+		if(type.equalsIgnoreCase("artificial")) {
+			artificial_btn.click();
+		}
+	}
+	
+	public void enter_HeatTime() {
+		SimpleDateFormat format = new SimpleDateFormat();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm a");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date));
+		String dateValue = format.format(date);
+		sendKeys(heatTime, dateValue);
+	}
+	
+	public void enter_HeatDate(String date) {
+		heat_date.clear();
+		sendKeys(heat_date,date);
+	}
+	
+	public void press_SaveButton() {
+		click(save_btn);	
+	}
+	
+
+}

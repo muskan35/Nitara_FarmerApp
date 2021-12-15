@@ -1,0 +1,7 @@
+appiumURL = http://0.0.0.0:4723/wd/hub
+androidAutomationName = uiautomator2
+androidAppPackage = com.nitara.farmer
+androidAppActivity = com.nitara.farmer.MainActivity
+AndroidApplication = nitara-v1.0.0(435)-debug.apk
+Username = 7658747491
+Password = password

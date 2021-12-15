@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.nitara.PageObjects.FarmerHomePage"/>
+    <fullyQualifiedTypeName name="io.appium.java_client.pagefactory.AndroidFindBy"/>
+    <fullyQualifiedTypeName name="io.appium.java_client.MobileElement"/>
+    <fullyQualifiedTypeName name="org.testng.Assert"/>
+    <fullyQualifiedTypeName name="com.nitara.utils.DataProviderUtils"/>
+    <fullyQualifiedTypeName name="com.nitara.PageObjects.CattleRegistrationSuccess_Page"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="com.nitara.Helper.GenerateRandomData"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.interactions.Actions"/>
+    <fullyQualifiedTypeName name="com.nitara.BreedingManagement.AddDryPeriod"/>
+    <fullyQualifiedTypeName name="com.nitara.PageObjects.AddDryPeriod_Page"/>
+    <fullyQualifiedTypeName name="com.nitara.PageObjects.LoginObjects"/>
+</qualifiedTypeNameHistroy>
