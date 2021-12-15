@@ -11,6 +11,11 @@ public class FarmerHomePage extends BasePage{
 	@AndroidFindBy(id = "com.nitara.farmer:id/breedRecordingBtn") 
 	private MobileElement breedRecording_btn;
 	
+	@AndroidFindBy(id = "com.nitara.farmer:id/health_btn") 
+	private MobileElement heal_btn;
+	
+	@AndroidFindBy(id = "com.nitara.farmer:id/search") 
+	private MobileElement src_btn;
 	
 	public void press_RegisterCattleButton()
 	{	waitVisibility(register_cattle_btn);
@@ -21,6 +26,14 @@ public class FarmerHomePage extends BasePage{
 	{	waitVisibility( breedRecording_btn);
 		click( breedRecording_btn);	
 	}
+	public void press_HealthManagementButton()
+	{	waitVisibility( heal_btn);
+		click( heal_btn);	
+	}
 	
+	public void press_Search()
+	{	waitVisibility( src_btn);
+		click( src_btn);	
+	}
 
 }
